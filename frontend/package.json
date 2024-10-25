@@ -12,7 +12,10 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
     "sass": "^1.80.4",
-    "sass-loader": "^13.3.3"
+    "sass-loader": "^13.3.3",
+    "@react-three/drei": "^9.114.6",
+    "@react-three/fiber": "^8.17.10",
+    "three": "^0.169.0"
   },
   "scripts": {
     "start": "react-scripts start",
