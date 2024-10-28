@@ -1,6 +1,8 @@
 import React from 'react';
 import BoxModel from './models/BoxModel'
 import OneBoxModel from './models/OneBoxModel'
+import STLModel from './models/STLModel'
+import ThorLabs from './models/ThorLabs'
 import './styles.scss';
 
 export default class ThreeD extends React.Component {
@@ -14,8 +16,11 @@ export default class ThreeD extends React.Component {
 
     render() {
         const modelMap = {
+            '': <div />,
             'boxes': <BoxModel />,
             'box': <OneBoxModel />,
+            'STL': <STLModel />,
+            'ThorLabs': <ThorLabs />
         }
         return (
             <div className="ThreeD-wrapper">
@@ -25,18 +30,14 @@ export default class ThreeD extends React.Component {
                         <div style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
                             <button onClick={() => this.selectModel('box')}>box</button>
                             <button onClick={() => this.selectModel('boxes')}>boxes</button>
+                            <button onClick={() => this.selectModel('STL')}>STL</button>
+                            <button onClick={() => this.selectModel('ThorLabs')}>ThorLabs</button>
                         </div>
                         <a href='/'>home</a>
                     </div>
                 </div>
                 {
-                    this.state.selectedModel == 'boxes' ?
-                        (<BoxModel />)
-                        :
-                        this.state.selectedModel == 'box' ?
-                        (<OneBoxModel />)
-                        :
-                        null
+                    modelMap[this.state.selectedModel]
                 }
             </div>
         );
