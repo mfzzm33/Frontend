@@ -5,11 +5,13 @@ import ThreeD from './3D';
 import TwoD from './2D';
 import './index.css';
 import App from './App';
+import Navbar from './Navbar';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+    <Navbar />
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/3D" element={<ThreeD />} />
