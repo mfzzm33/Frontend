@@ -7,7 +7,7 @@ function ModelRender({ url }) {
     const geom = useLoader(STLLoader, url);
     return (
         <mesh geometry={geom}
-            scale={[10,10,10]}
+            scale={[15,15,15]}
             position={[0,0,0]}
         >
             <meshPhongMaterial color="gray" />
