@@ -3,24 +3,27 @@ import BoxModel from './models/BoxModel'
 import OneBoxModel from './models/OneBoxModel'
 import STLModel from './models/STLModel'
 import ThorLabs from './models/ThorLabs'
+import MultiModel from './models/MultiModel'
+import PlanarGrid from './models/Grid';
 import './styles.scss';
 
 export default class ThreeD extends React.Component {
     state = {
-        selectedModel: '',
+        selectedModel: <div/>,
     }
-    selectModel = (modelName) => {
-        console.log("selected ", modelName, " model");
-        this.setState({ selectedModel: modelName });
+    selectModel = (model) => {
+        this.setState({ selectedModel: model });
     };
 
     render() {
         const modelMap = {
-            '': <div />,
+            'None': <div />,
             'boxes': <BoxModel />,
             'box': <OneBoxModel />,
             'STL': <STLModel />,
-            'ThorLabs': <ThorLabs />
+            'ThorLabs': <ThorLabs />,
+            'MultiModel': <MultiModel />,
+            'PlanarGrid': <PlanarGrid />
         }
         return (
             <div className="ThreeD-wrapper">
@@ -28,16 +31,16 @@ export default class ThreeD extends React.Component {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                         <p>Welcome to LabStream 3D. Select a model to view.</p>
                         <div style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
-                            <button onClick={() => this.selectModel('box')}>box</button>
-                            <button onClick={() => this.selectModel('boxes')}>boxes</button>
-                            <button onClick={() => this.selectModel('STL')}>STL</button>
-                            <button onClick={() => this.selectModel('ThorLabs')}>ThorLabs</button>
+                            {Object.entries(modelMap).map(([key, value]) => (
+                                <button onClick={() => this.selectModel(value)}>{key}</button>
+                            ))}
                         </div>
                         <a href='/'>home</a>
                     </div>
                 </div>
                 {
-                    modelMap[this.state.selectedModel]
+                    // Display the selected model
+                    this.state.selectedModel
                 }
             </div>
         );
