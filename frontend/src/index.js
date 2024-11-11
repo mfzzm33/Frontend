@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ThreeD from './3D';
-import TwoD from './2D';
+// import ThreeD from './3D';
+// import TwoD from './2D';
 import './index.css';
 import App from './App';
 import Navbar from './Navbar';
@@ -14,8 +14,8 @@ root.render(
     <Navbar />
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/3D" element={<ThreeD />} />
-      <Route path="/2D" element={<TwoD />} />
+      {/* <Route path="/3D" element={<ThreeD />} />
+      <Route path="/2D" element={<TwoD />} /> */}
     </Routes>
   </BrowserRouter>
 );
