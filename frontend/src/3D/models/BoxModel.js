@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei'; // Import OrbitControls
-import { autoType } from 'd3';
 
 // Box component as a functional component
 const Box = (props) => {
@@ -33,7 +32,7 @@ const Box = (props) => {
 const BoxModel = () => {
     return (
         <Canvas
-            style={{ height: '100%' }} // Fullscreen Canvas
+            style={{ height: '100vh', width: '100vw' }} // Fullscreen Canvas
             camera={{ position: [0, 0, 10], fov: 50 }}
         >
             <ambientLight intensity={Math.PI / 2} />
