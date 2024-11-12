@@ -11,7 +11,6 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <Navbar />
     <Routes>
       <Route path="/" element={<App />} />
       {/* <Route path="/3D" element={<ThreeD />} />
