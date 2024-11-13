@@ -84,8 +84,8 @@ const MultiModel = () => {
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={3} />
                 <spotLight position={[1, 1, 5]} angle={0.3} penumbra={1} decay={0} intensity={3} />
                 <pointLight position={[-10, -10, -10]} decay={0} intensity={3} />
-                <ModelRender url="/ThorLabsSTLs/TR2-Solidworks.stl" position={[1, 0, 0]} label="2" labelPosition={[1, 1, 0]} />
-                <ModelRender url="/ThorLabsSTLs/TR2-Solidworks.stl" position={[-1, 0, 0]} label="1" labelPosition={[-1, 1, 0]} />
+                <ModelRender url="/ThorLabsSTLs/TR2-Solidworks.stl" position={[1, 0, 0]} label="2" labelPosition={[1, 0.5, 0]} />
+                <ModelRender url="/ThorLabsSTLs/TR2-Solidworks.stl" position={[-1, 0, 0]} label="1" labelPosition={[-1, 0.5, 0]} />
                 <BoxRender position={[0, 0, 0]} label="Box" labelPosition={[0, 1, 0]} />
             </Suspense>
             <OrbitControls
