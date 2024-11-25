@@ -4,8 +4,8 @@ import { styled } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
 
 const LabelPaper = styled(Paper)(({ theme }) => ({
-    width: 120,
-    height: 120,
+    display: 'flex',
+    minWidth: 100,
     background: '#252525',
     color: '#f1f1f1',
     padding: theme.spacing(2),
