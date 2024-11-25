@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import {NavBar} from './Navbar';
 import './App.scss';
 import { Paper, Slider, TextField, Typography, Stack, Switch } from '@mui/material'
 import { styled } from '@mui/material/styles';
@@ -39,25 +40,12 @@ function App() {
 
 	return (
 		<div className="TwoD-wrapper">
-			<Grid container spacing={2}>
-				<Grid size={3}>
-					<div className="intro-card">
-						<p>Welcome to LabStream 2D.</p>
-						<a href='/'>home</a>
-					</div>
-				</Grid>
-				<Grid size={9}>
-					{/* Empty div to fill line */}
-					<div />
-				</Grid>
-				<Grid size={3}>
-					<Item>
-						<span>Webcam live feed</span>
 
-						<img src="/AllPurposeFiller.jpg" style={{ width: '80%', height: 'auto', objectFit: 'cover' }} />
-					</Item>
+			<Grid container spacing={2}>
+				<Grid size={12}>
 				</Grid>
-				<Grid size={6}>
+				
+				<Grid size={9}>
 					<Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
 						<Typography>3D</Typography>
 						<Switch checked={is3D} onChange={handleSwitch}/>
@@ -110,6 +98,12 @@ function App() {
 							</div>
 						</Item>
 					</div>
+				</Grid>
+				<Grid size={9}>
+					<Item>
+						<span>Webcam live feed</span>
+						<img src="/AllPurposeFiller.jpg" style={{ width: '80%', height: 'auto', objectFit: 'cover' }} />
+					</Item>
 				</Grid>
 			</Grid>
 		</div>
